@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "task1-1": "nodemon task1-1.js",
-    "task1-2": "nodemon task1-2.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "task1-1": "nodemon --exec babel-node HW_1/task1-1.js",
+    "task1-2": "nodemon --exec babel-node HW_1/task1-2.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +19,10 @@
   },
   "homepage": "https://github.com/DariaOsip/nodejs_homework#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.15.6",
+    "@babel/cli": "^7.15.7",
+    "@babel/node": "^7.15.4",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
     "nodemon": "^2.0.13"
   },
   "dependencies": {

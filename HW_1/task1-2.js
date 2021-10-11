@@ -10,9 +10,15 @@ const writeStream = fs.createWriteStream(fileName);
 
 csv()
     .fromStream(readStream)
+    .preFileLine((line, index) => {
+        return (index === 0) ? line.toLowerCase() : line;
+    })
     .subscribe(json => {
         return new Promise(resolve => {
             writeStream.write(JSON.stringify(json) + '\r\n');
             return resolve(json);
         })
     }, error => console.dir(error), () => console.dir(fileName + ' is successfully created.'));
+
+
+
